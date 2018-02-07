@@ -1,4 +1,4 @@
-package com.github.shafiquejamal.accessapi.registration
+package com.github.shafiquejamal.accessapi.access.registration
 
 import java.util.UUID
 

@@ -1,4 +1,4 @@
-package com.github.shafiquejamal.accessapi.authentication
+package com.github.shafiquejamal.accessapi.access.authentication
 
 trait AuthenticationMessage {
   def maybeUsername: Option[String]
