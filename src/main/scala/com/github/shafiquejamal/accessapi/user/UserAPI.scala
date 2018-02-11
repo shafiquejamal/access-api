@@ -6,11 +6,13 @@ import scala.util.Try
 
 trait UserAPI[UM] {
 
-  def changeUsername(userId: UUID, changeUsernameMessage: ChangeUsernameMessage): Try[UM]
+  def changeUsername(userId: UUID, newUsername: String): Try[UM]
 
-  def changeEmail(userId: UUID, changeEmailMessage: ChangeEmailMessage): Try[UM]
+  def requestChangeEmail(userId: UUID, newEmailAddress: String): Try[UM]
 
-  def changePassword(userId: UUID, changePasswordMessage: ChangePasswordMessage): Try[UM]
+  def changeEmail(userId: UUID, newEmailAddress: String, code: String): Try[UM]
+
+  def changePassword(userId: UUID, newPassword: String): Try[UM]
 
   def findByEmailLatest(email: String): Option[UM]
 

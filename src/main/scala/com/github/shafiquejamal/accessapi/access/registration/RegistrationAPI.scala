@@ -6,7 +6,7 @@ import scala.util.Try
 
 trait RegistrationAPI[UM, US] {
 
-  def signUp(registrationMessage: RegistrationMessage, statusOnRegistration: US): Try[UM]
+  def signUp(maybeUsername: Option[String], email: String, password: String, statusOnRegistration: US): Try[UM]
 
   def isUsernameIsAvailable(username: String): Boolean
 

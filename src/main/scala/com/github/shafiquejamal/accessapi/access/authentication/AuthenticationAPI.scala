@@ -11,7 +11,7 @@ trait AuthenticationAPI[UM] {
 
   def validateOneTime(id: UUID, iat: Instant): Option[UM]
 
-  def user(authenticationMessage: AuthenticationMessage): Option[UM]
+  def user(maybeUsername: Option[String], maybeEmail: Option[String], password: String): Option[UM]
 
   def storePasswordResetCode(email: String, passwordResetCode: String): Try[UM]
 
