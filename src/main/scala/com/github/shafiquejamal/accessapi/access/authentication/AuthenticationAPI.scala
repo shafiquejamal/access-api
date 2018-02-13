@@ -7,11 +7,13 @@ import scala.util.Try
 
 trait AuthenticationAPI[UM] {
 
-  def userById(id: UUID): Option[UM]
+  def userByID(iD: UUID): Option[UM]
 
   def validateOneTime(id: UUID, iat: Instant): Option[UM]
 
   def user(maybeUsername: Option[String], maybeEmail: Option[String], password: String): Option[UM]
+
+  def user(iD: UUID, password: String): Option[UM]
 
   def storePasswordResetCode(email: String, passwordResetCode: String): Try[UM]
 

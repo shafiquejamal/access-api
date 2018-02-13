@@ -68,4 +68,20 @@ object OutBound {
 
   }
 
+  trait ResendActivationCodeResultMessage {
+
+    def message: String
+
+  }
+
+  trait YouAreAlreadyAuthenticatedMessage
+
+  trait LoggingYouOutMessage
+
+  trait ChangePasswordAttemptResultMessage
+
+  trait ChangePasswordFailedMessage extends ChangePasswordAttemptResultMessage
+
+  trait ChangePasswordSucceededMessage extends ChangePasswordAttemptResultMessage
+
 }

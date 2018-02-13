@@ -2,7 +2,7 @@ package com.github.shafiquejamal.accessapi.user
 
 import java.util.UUID
 
-trait UserMessage[S] {
+trait UserDetails[S] {
 
   def userID: UUID
 
