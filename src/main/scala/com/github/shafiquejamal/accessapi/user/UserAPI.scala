@@ -21,4 +21,8 @@ trait UserAPI[UM] {
   def by(username: String): Option[UUID]
 
   def by(userId: UUID): Option[String]
+
+  def sendActivationCodeForNewEmail(userId: UUID, currentEmail: String, newEmail: String): Try[UM]
+
+  def activateNewEmail(userID: UUID, currentEmail: String, newEmail: String, code: String): Try[UM]
 }
