@@ -77,13 +77,22 @@ object InBound {
 
   }
 
-  trait LogMeOutMessage {
+  trait LogMeOutMessage
+
+  trait LogMeOutOfAllDevicesMessage
+
+  trait RequestChangeEmailMessage {
+
+    def newEmail: String
 
   }
 
-  trait LogMeOutOfAllDevicesMessage {
+  trait ActivateNewEmailMessage {
+
+    def newEmail: String
+
+    def code: String
 
   }
-
 
 }

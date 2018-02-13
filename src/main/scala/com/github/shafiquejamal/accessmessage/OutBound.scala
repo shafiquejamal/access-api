@@ -84,4 +84,12 @@ object OutBound {
 
   trait ChangePasswordSucceededMessage extends ChangePasswordAttemptResultMessage
 
+  trait RequestChangeEmailFailedMessage
+
+  trait RequestChangeEmailSucceededMessage
+
+  trait ActivateNewEmailFailedMessage
+
+  trait ActivateNewEmailSucceededMessage
+
 }
