@@ -2,14 +2,11 @@ package com.github.shafiquejamal.accessmessage
 
 object InBound {
 
-  trait AuthenticateMeMessage {
-
+  trait AuthenticateMeMessage extends Message[AuthenticateMeMessage] {
     def jWT: String
-
   }
 
-  trait LogMeInMessage {
-
+  trait LogMeInMessage extends Message[LogMeInMessage] {
     def maybeUsername: Option[String]
 
     def maybeEmail: Option[String]
@@ -17,82 +14,62 @@ object InBound {
     def password: String
   }
 
-  trait PasswordResetCodeRequestMessage {
-
+  trait PasswordResetCodeRequestMessage extends Message[PasswordResetCodeRequestMessage] {
     def email: String
-
   }
 
-  trait ResetMyPasswordMessage {
-
+  trait ResetMyPasswordMessage extends Message[ResetMyPasswordMessage] {
     def email: String
 
     def code: String
 
     def newPassword: String
-
   }
 
-  trait IsEmailAvailableMessage {
-
+  trait IsEmailAvailableMessage extends Message[IsEmailAvailableMessage] {
     def email: String
-
   }
 
-  trait IsUsernameAvailableMessage {
-
+  trait IsUsernameAvailableMessage extends Message[IsUsernameAvailableMessage] {
     def username: String
-
   }
 
-  trait RegisterMeMessage {
-
+  trait RegisterMeMessage extends Message[RegisterMeMessage] {
     def maybeUsername: Option[String]
 
     def email:String
 
     def password:String
-
   }
 
-  trait ChangeMyPasswordMessage {
-
+  trait ChangeMyPasswordMessage extends Message[ChangeMyPasswordMessage] {
     def currentPassword: String
 
     def newPassword: String
-
   }
 
-  trait ActivateMyAccountMessage {
-
+  trait ActivateMyAccountMessage extends Message[ActivateMyAccountMessage] {
     def emailOrUsername: String
 
     def code: String
-
   }
 
-  trait ResendMyActivationCodeMessage {
-
+  trait ResendMyActivationCodeMessage extends Message[ResendMyActivationCodeMessage] {
     def email: String
-
   }
 
-  trait LogMeOutMessage
+  trait LogMeOutMessage extends Message[LogMeOutMessage]
 
-  trait LogMeOutOfAllDevicesMessage
+  trait LogMeOutOfAllDevicesMessage extends Message[LogMeOutOfAllDevicesMessage]
 
-  trait RequestChangeEmailMessage {
-
+  trait RequestChangeEmailMessage extends Message[RequestChangeEmailMessage] {
     def newEmail: String
-
   }
 
-  trait ActivateNewEmailMessage {
-
+  trait ActivateNewEmailMessage extends Message[ActivateNewEmailMessage] {
     def newEmail: String
 
     def code: String
-
   }
 
 }
