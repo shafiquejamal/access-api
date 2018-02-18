@@ -4,25 +4,25 @@ import java.util.UUID
 
 import scala.util.Try
 
-trait UserAPI[UM] {
+trait UserAPI[UD] {
 
-  def changeUsername(userId: UUID, newUsername: String): Try[UM]
+  def changeUsername(userId: UUID, newUsername: String): Try[UD]
 
-  def requestChangeEmail(userId: UUID, newEmailAddress: String): Try[UM]
+  def requestChangeEmail(userId: UUID, newEmailAddress: String): Try[UD]
 
-  def changeEmail(userId: UUID, newEmailAddress: String, code: String): Try[UM]
+  def changeEmail(userId: UUID, newEmailAddress: String, code: String): Try[UD]
 
-  def changePassword(userId: UUID, newPassword: String): Try[UM]
+  def changePassword(userId: UUID, newPassword: String): Try[UD]
 
-  def findByEmailLatest(email: String): Option[UM]
+  def findByEmailLatest(email: String): Option[UD]
 
-  def findUnverifiedUser(email: String): Option[UM]
+  def findUnverifiedUser(email: String): Option[UD]
 
   def by(username: String): Option[UUID]
 
   def by(userId: UUID): Option[String]
 
-  def sendActivationCodeForNewEmail(userId: UUID, currentEmail: String, newEmail: String): Try[UM]
+  def sendActivationCodeForNewEmail(userId: UUID, currentEmail: String, newEmail: String): Try[UD]
 
-  def activateNewEmail(userID: UUID, currentEmail: String, newEmail: String, code: String): Try[UM]
+  def activateNewEmail(userID: UUID, currentEmail: String, newEmail: String, code: String): Try[UD]
 }

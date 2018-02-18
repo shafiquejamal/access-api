@@ -2,8 +2,8 @@ package com.github.shafiquejamal.accessapi.access.authentication
 
 import java.time.Instant
 
-trait JWTCreator[UM] {
+trait JWTCreator[UD] {
 
-  def create(userMessage: UM, time: Instant): String
+  def create(userDetails: UD, time: Instant): String
 
 }

@@ -27,13 +27,13 @@ object OutBound {
   trait EmailIsAvailableMessage[J] extends OutboundMessage[J, EmailIsAvailableMessage[J]] {
     def email: String
 
-    def emailIsAvailable: Boolean
+    def isEmailIsAvailable: Boolean
   }
 
   trait UsernameIsAvailableMessage[J] extends OutboundMessage[J, UsernameIsAvailableMessage[J]] {
     def username: String
 
-    def usernameIsAvailable: Boolean
+    def isUsernameIsAvailable: Boolean
   }
 
   trait RegistrationAttemptResultMessage[J] extends OutboundMessage[J, RegistrationAttemptResultMessage[J]]

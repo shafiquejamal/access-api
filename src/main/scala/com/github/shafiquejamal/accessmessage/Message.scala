@@ -1,9 +1,11 @@
 package com.github.shafiquejamal.accessmessage
 
+import java.util.UUID
+
 trait Message[T <: Message[T]] {
 
-  def previousMessages: Seq[Message[_]]
+  def iD: UUID
 
-  def add(m: Message[_]): T
+  def previousMessageID: Option[UUID] = None
 
 }
