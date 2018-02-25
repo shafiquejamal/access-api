@@ -6,6 +6,8 @@ object OutBound {
     def toJSON: J
   }
 
+  trait AuthenticationSuccessfulMessage[J] extends OutboundMessage[J, AuthenticationSuccessfulMessage[J]]
+
   trait LoginAttemptResultMessage[J] extends OutboundMessage[J, LoginAttemptResultMessage[J]]
 
   trait YourLoginAttemptFailedMessage[J] extends LoginAttemptResultMessage[J]
@@ -49,12 +51,6 @@ object OutBound {
   }
 
   trait AccountActivationAttemptSucceededMessage[J] extends AccountActivationAttemptResultMessage[J]
-
-  trait AccountActivationCodeCreator {
-    def generate(toHash: String, key: String): String
-
-    def isMatch(toHash: String, toCheck: String, key: String): Boolean
-  }
 
   trait ResendActivationCodeResultMessage[J] extends OutboundMessage[J, ResendActivationCodeResultMessage[J]] {
     def message: String

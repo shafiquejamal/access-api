@@ -1,7 +1,7 @@
 package com.github.shafiquejamal.accessapi.access.registration
 
-trait UserActivator[UM, M] {
+trait UserActivator[UD, M] {
 
-  def activateUser(user: UM, code:String): M
+  def activateUser(user: UD, code:String): M
 
 }

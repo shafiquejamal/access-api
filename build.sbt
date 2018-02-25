@@ -23,7 +23,7 @@ lazy val root = (project in file(".")).
     inThisBuild(List(
       organization := "com.github.shafiquejamal",
       scalaVersion := "2.11.11",
-      version      := "0.0.20"
+      version      := "0.0.22"
     )),
     name := "access-api",
     libraryDependencies += scalaTest % Test
