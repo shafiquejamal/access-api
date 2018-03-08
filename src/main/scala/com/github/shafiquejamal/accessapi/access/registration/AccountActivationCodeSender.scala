@@ -1,8 +1,10 @@
 package com.github.shafiquejamal.accessapi.access.registration
 
-trait AccountActivationCodeSender[UM, US] {
+import com.github.shafiquejamal.accessapi.user.UserDetails
 
-  def sendActivationCode(username: String, email: String, code: String): Unit
+trait AccountActivationCodeSender[US, UD <: UserDetails[US]] {
+
+  def sendActivationCode(userDetails: UD): Unit
 
   def statusOnRegistration: US
 
