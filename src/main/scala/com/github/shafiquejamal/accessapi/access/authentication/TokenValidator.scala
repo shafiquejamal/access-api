@@ -1,19 +1,11 @@
 package com.github.shafiquejamal.accessapi.access.authentication
 
-import java.util.UUID
 
-import com.github.shafiquejamal.accessapi.user.UserContact
+import com.github.shafiquejamal.accessapi.user.UserDetails
 
-trait TokenValidator {
-
-  def decodeAndValidateToken(
-      token: String,
-      blockToExecuteIfAuthorized: => (UUID, String) => Option[UserContact],
-      blockToExecuteIfUnauthorized: => Option[(UUID, String)]): Option[UserContact]
-
-  def blockToExecuteIfAuthorized: (UUID, String) => Option[UserContact]
-
-  def blockToExecuteIfUnauthorized: Option[(UUID, String)]
-
+trait TokenValidator[US, T <: UserDetails[US]] {
+  
+  def decodeAndValidateToken(token: String): Option[T]
+  
 }
 
