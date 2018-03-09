@@ -9,8 +9,6 @@ trait AuthenticationAPI[UD] {
 
   def userByID(iD: UUID): Option[UD]
 
-  def validateOneTime(id: UUID, iat: Instant): Option[UD]
-
   def user(maybeUsername: Option[String], maybeEmail: Option[String], password: String): Option[UD]
 
   def user(iD: UUID, password: String): Option[UD]
