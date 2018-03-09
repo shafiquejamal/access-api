@@ -7,7 +7,7 @@ import com.github.shafiquejamal.accessapi.user.UserDetails
 
 trait TokenValidator[US, T <: UserDetails[US]] {
   
-  def decodeAndValidateToken(token: String, jWTValidityLength: Long, jWTValidityUnit: TemporalUnit): Option[T]
+  def decodeAndValidateToken(token: String): Option[T]
   
 }
 
