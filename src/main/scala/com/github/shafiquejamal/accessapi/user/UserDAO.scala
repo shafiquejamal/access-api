@@ -9,10 +9,6 @@ import scala.util.Try
 
 trait UserDAO[U, US] {
 
-  def byUsername(username: String, userFilter: U => Boolean): Option[U]
-
-  def byEmail(email: String, userFilter: U => Boolean): Option[U]
-
   def add(
       user: U,
       created: Instant,

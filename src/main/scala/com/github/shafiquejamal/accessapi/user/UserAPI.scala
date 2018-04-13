@@ -14,8 +14,6 @@ trait UserAPI[UD] {
 
   def changePassword(userId: UUID, newPassword: String): Try[UD]
 
-  def findByEmailLatest(email: String): Option[UD]
-
   def findUnverifiedUser(email: String): Option[UD]
 
   def by(username: String): Option[UUID]
@@ -24,5 +22,4 @@ trait UserAPI[UD] {
 
   def sendActivationCodeForNewEmail(userId: UUID, currentEmail: String, newEmail: String): Try[UD]
 
-  def activateNewEmail(userID: UUID, currentEmail: String, newEmail: String, code: String): Try[UD]
 }
