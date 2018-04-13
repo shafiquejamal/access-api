@@ -16,6 +16,10 @@ object OutBound {
 
   trait YourLoginAttemptFailedMessage[J] extends LoginAttemptResultMessage[J]
 
+  trait LoginFieldsValidationFailedMessage[J] extends YourLoginAttemptFailedMessage[J] {
+    def reason: String
+  }
+
   trait YourLoginAttemptSucceededMessage[J] extends LoginAttemptResultMessage[J] {
     def username: String
 
@@ -45,6 +49,10 @@ object OutBound {
   trait RegistrationAttemptResultMessage[J] extends OutboundMessage[J, RegistrationAttemptResultMessage[J]]
 
   trait YourRegistrationAttemptFailedMessage[J] extends RegistrationAttemptResultMessage[J]
+
+  trait RegistrationFieldsValidationFailedMessage[J] extends YourRegistrationAttemptFailedMessage[J] {
+    def reason: String
+  }
 
   trait YourRegistrationAttemptSucceededMessage[J] extends RegistrationAttemptResultMessage[J]
 
