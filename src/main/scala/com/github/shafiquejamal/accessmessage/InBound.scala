@@ -40,6 +40,8 @@ object InBound {
     def email:String
 
     def password:String
+
+    def maybeRegistrationCode: Option[String]
   }
 
   trait ChangeMyPasswordMessage extends Message[ChangeMyPasswordMessage] {

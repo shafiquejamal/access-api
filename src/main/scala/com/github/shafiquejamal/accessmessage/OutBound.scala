@@ -7,7 +7,7 @@ object OutBound {
   trait OutboundMessage[J, T <: OutboundMessage[J, T]] extends Message[T] {
     def toJSON: J
   
-    def previousMessageID: Option[UUID]
+    def maybePreviousMessageID: Option[UUID]
   }
 
   trait AuthenticationSuccessfulMessage[J] extends OutboundMessage[J, AuthenticationSuccessfulMessage[J]]
